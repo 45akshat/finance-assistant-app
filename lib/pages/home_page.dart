@@ -4,6 +4,7 @@ import 'package:expense/data/expense_data.dart';
 import 'package:expense/models/expense_item.dart';
 import 'package:expense/pages/account_page.dart';
 import 'package:expense/pages/budget_page.dart';
+import 'package:expense/pages/category.dart';
 import 'package:expense/pages/investments_page.dart';
 import 'package:expense/services/sms_model/connect_to_py.dart';
 import 'package:flutter/material.dart';
@@ -307,6 +308,10 @@ class _HomePageState extends State<HomePage> {
               label: 'Home',
             ),
             BottomNavigationBarItem(
+              icon: Icon(Icons.category_rounded),
+              label: 'Category',
+            ),
+            BottomNavigationBarItem(
               icon: Icon(Icons.account_balance_wallet),
               label: 'Budget',
             ),
@@ -335,11 +340,12 @@ class _HomePageState extends State<HomePage> {
                 //   ),
                 // );
                 break;
+
               case 1:
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => BudgetPage(),
+                    builder: (context) => CategoryPage(),
                   ),
                 );
                 break;
@@ -347,11 +353,22 @@ class _HomePageState extends State<HomePage> {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
+                    builder: (context) => BudgetPage(),
+                  ),
+                );
+                break;
+
+
+              
+              case 3:
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
                     builder: (context) => InvestmentsPage(),
                   ),
                 );
                 break;
-              case 3:
+              case 4:
                 Navigator.push(
                   context,
                   MaterialPageRoute(
