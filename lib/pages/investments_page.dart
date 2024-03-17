@@ -10,7 +10,7 @@ class InvestmentsPage extends StatefulWidget {
 class _InvestmentsPageState extends State<InvestmentsPage> {
   Future<List<Map<String, dynamic>>> getOrderBook() async {
     final url =
-        'http://192.168.1.100:5001/get_order_book'; // Update with your server address
+        'http://192.168.100.117:5001/get_order_book'; // Update with your server address
     final headers = {'Content-Type': 'application/json'};
     final body = jsonEncode({
       'api_key': 'mBqeJfcE',
@@ -58,6 +58,7 @@ class _InvestmentsPageState extends State<InvestmentsPage> {
                   title: Text(
                     item['tradingsymbol'],
                     style: TextStyle(
+                      fontFamily: 'Poppins',
                       fontWeight: FontWeight.w500,
                       fontSize: 16,
                     ),
@@ -65,6 +66,7 @@ class _InvestmentsPageState extends State<InvestmentsPage> {
                   subtitle: Text(
                     'Price: ${item['price']}',
                     style: TextStyle(
+                      fontFamily: 'Poppins',
                       color: Colors.grey,
                       fontWeight: FontWeight.bold,
 
@@ -73,6 +75,7 @@ class _InvestmentsPageState extends State<InvestmentsPage> {
                   trailing: Text(
                     'Qty: ${item['quantity']}',
                     style: TextStyle(
+                      fontFamily: 'Poppins',
                       color: Colors.blue,
                     ),
                   ),

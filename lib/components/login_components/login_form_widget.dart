@@ -53,7 +53,10 @@ Form loginFormWidget(TextEditingController _emailTextField,
                     ),
                     child: Text(
                       "Request Otp",
-                      style: TextStyle(color: Colors.white),
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+
+                        color: Colors.white),
                     )),
               ),
             ],

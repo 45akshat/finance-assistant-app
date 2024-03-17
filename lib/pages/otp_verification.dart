@@ -28,8 +28,8 @@ class _OtpVerificationState extends State<OtpVerification> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text("OTP", style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
-            const Text("OTP has been sent to your Email", style: TextStyle(fontSize: 16)),
+            const Text("OTP", style: TextStyle(fontFamily: 'Poppins', fontSize: 30, fontWeight: FontWeight.bold)),
+            const Text("OTP has been sent to your Email", style: TextStyle(fontFamily: 'Poppins', fontSize: 16)),
             const SizedBox(height: 20),
             OtpTextField(
               onSubmit: (code){
@@ -74,7 +74,7 @@ class _OtpVerificationState extends State<OtpVerification> {
                   ),
                 ),
               ),
-              child: const Text("Next", style: TextStyle(color: Colors.white),),
+              child: const Text("Next", style: TextStyle(fontFamily: 'Poppins', color: Colors.white),),
             )
             )
           

@@ -48,7 +48,7 @@ dependencies:
   http: 
   flutter_otp_text_field:
   flutter_secure_storage: ^9.0.0
-
+  google_maps_flutter:
 
 dev_dependencies:
   flutter_test:

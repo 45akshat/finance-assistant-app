@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-final serverUrl = 'http://192.168.1.100:5001/get_order_book';
+final serverUrl = 'http://192.168.100.117:5001/get_order_book';
 
 Future<List<String>> getOrderBook() async {
   final requestBody = {

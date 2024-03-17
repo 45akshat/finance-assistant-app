@@ -22,7 +22,13 @@ class AccountPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Account Page'),
+        title: Text(
+          'Account Page',
+          style: TextStyle(color: Colors.white), // Set app bar title text color
+        ),
+        backgroundColor: Colors.black, // Set app bar background color
+        iconTheme: IconThemeData(
+            color: Color.fromARGB(255, 187, 187, 187)), // Set back icon color
       ),
       body: Padding(
         padding: EdgeInsets.all(16.0),
@@ -36,12 +42,18 @@ class AccountPage extends StatelessWidget {
                   if (snapshot.hasData && snapshot.data!.isNotEmpty) {
                     return Text(
                       'Email: ${snapshot.data}',
-                      style: TextStyle(fontSize: 18),
+                      style: TextStyle(
+                          fontFamily: 'Poppins',
+                          fontSize: 18,
+                          color: Colors.white),
                     );
                   } else {
                     return Text(
                       'Email not available',
-                      style: TextStyle(fontSize: 18),
+                      style: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 18,
+                      ),
                     );
                   }
                 } else {
@@ -51,6 +63,15 @@ class AccountPage extends StatelessWidget {
             ),
             SizedBox(height: 20),
             ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                primary: Color.fromARGB(255, 219, 12, 50), // Set the background color
+                onPrimary:
+                    Color.fromARGB(255, 187, 187, 187), // Set the text color
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(8.0),
+                ),
+                padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
+              ),
               onPressed: () async {
                 // Call the function to delete the JWT token or perform any other logout actions
                 await deleteJwtToken();
@@ -63,15 +84,19 @@ class AccountPage extends StatelessWidget {
               },
               child: Text('Logout'),
             ),
-
             SizedBox(height: 20),
             Text(
               'Help: We would love to help you, contact: contactme@gmail.com',
-              style: TextStyle(fontSize: 16, color: Colors.grey),
+              style: TextStyle(
+                fontFamily: 'Poppins',
+                fontSize: 16,
+                color: Colors.grey,
+              ),
             ),
           ],
         ),
       ),
+      backgroundColor: Colors.black, // Set body background color
     );
   }
 }
@@ -80,6 +105,7 @@ void main() {
   runApp(
     MaterialApp(
       home: AccountPage(),
+      theme: ThemeData.dark(), // Apply a dark theme to the entire app
     ),
   );
 }

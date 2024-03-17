@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:http/http.dart' as http;
 
-final serverUrl = 'http://192.168.1.100:5002/predict-industry';  // Update the URL
+final serverUrl = 'http://192.168.100.117:5002/predict-industry';  // Update the URL
 
 Future<String> predictIndustry(String companyName) async {
   final requestBody = {

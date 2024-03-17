@@ -43,6 +43,7 @@ class MyBarGraph extends StatelessWidget {
       minY: 0,
       titlesData: FlTitlesData(show: true,
       topTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
+      leftTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
       rightTitles: AxisTitles(sideTitles: SideTitles(showTitles: false)),
       bottomTitles: AxisTitles(
         sideTitles: SideTitles(
@@ -57,13 +58,13 @@ class MyBarGraph extends StatelessWidget {
       barRods: [
         BarChartRodData(
           toY: e.y,
-          color: Colors.indigo,
+          color: Color.fromARGB(255, 69, 63, 255),
           width: 25,
           borderRadius: BorderRadius.circular(8),
           backDrawRodData: BackgroundBarChartRodData(
             show: true,
             toY: maxY,
-            color: Colors.grey[200]
+            color: Color.fromARGB(255, 32, 34, 57)
           )
           )
       ])).toList(),
@@ -74,6 +75,8 @@ class MyBarGraph extends StatelessWidget {
 
 Widget getBottomTitles(double value, TitleMeta meta){
   const style = TextStyle(
+    fontFamily: 'Poppins',
+
     color: Colors.grey,
     fontWeight: FontWeight.bold,
     fontSize: 14

@@ -32,13 +32,14 @@ class _BudgetPageState extends State<BudgetPage> {
       });
     }
   }
-  
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Weekly Budget'),
+     appBar: AppBar(
+        title: Text('Weekly Budget', style: TextStyle(color: Color.fromARGB(255, 187, 187, 187)),),
+        backgroundColor: Colors.black, // Set the app bar background color
+        iconTheme: IconThemeData(color: Color.fromARGB(255, 187, 187, 187)), // Set back icon color
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
@@ -47,15 +48,23 @@ class _BudgetPageState extends State<BudgetPage> {
           children: [
             Text(
               'Current Weekly Budget: Rs ${_currentWeeklyBudget.toStringAsFixed(2)}',
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+              style: TextStyle(
+                fontFamily: 'Poppins',
+                fontSize: 18,
+                fontWeight: FontWeight.w600,
+                color: Color.fromARGB(255, 187, 187, 187), // Set text color
+              ),
             ),
             SizedBox(height: 16),
             TextField(
               controller: _newBudgetController,
+              style: TextStyle(color: Colors.white), // Set text color to white
               keyboardType: TextInputType.number,
               decoration: InputDecoration(
                 labelText: 'Enter New Weekly Budget',
                 hintText: 'Enter amount in rupees',
+                labelStyle: TextStyle(color: Color.fromARGB(255, 187, 187, 187)), // Set label text color
+                hintStyle: TextStyle(color: Colors.grey), // Set hint text color
               ),
             ),
             SizedBox(height: 16),
@@ -64,22 +73,26 @@ class _BudgetPageState extends State<BudgetPage> {
                 _setWeeklyBudget();
               },
               style: ElevatedButton.styleFrom(
-                primary: Color.fromARGB(255, 0, 150, 0), // Set the background color
-                onPrimary: Colors.white, // Set the text color
+                primary: Color.fromARGB(255, 66, 47, 229), // Set the background color
+                onPrimary: Color.fromARGB(255, 187, 187, 187), // Set the text color
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8.0), // Set rounded corners
+                  borderRadius: BorderRadius.circular(8.0),
                 ),
-                padding: EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0), // Set padding
+                padding:
+                    EdgeInsets.symmetric(vertical: 12.0, horizontal: 16.0),
               ),
               child: Text(
                 'Set Weekly Budget',
-                style: TextStyle(fontSize: 16.0), // Set text style
+                style: TextStyle(
+                  fontFamily: 'Poppins',
+                  fontSize: 16.0,
+                ),
               ),
             ),
-
           ],
         ),
       ),
+      backgroundColor: Colors.black, // Set the body background color
     );
   }
 
@@ -91,7 +104,8 @@ class _BudgetPageState extends State<BudgetPage> {
     }
 
     // Parse the amount as a double
-    double newWeeklyBudget = double.tryParse(_newBudgetController.text) ?? 0.0;
+    double newWeeklyBudget =
+        double.tryParse(_newBudgetController.text) ?? 0.0;
 
     // Set the current weekly budget in the UI
     setState(() {

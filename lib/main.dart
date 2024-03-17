@@ -1,6 +1,7 @@
 import 'package:expense/data/expense_data.dart';
 import 'package:expense/pages/home_page.dart';
 import 'package:expense/pages/login_page.dart';
+import 'package:expense/pages/tax_calc.dart';
 import 'package:expense/services/otp_verification/user_info_save_locally.dart';
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/adapters.dart';
@@ -37,7 +38,10 @@ class MyApp extends StatelessWidget {
         }else{
           // Display a loading indicator or splash screen if needed
           return Scaffold(
+            
+            backgroundColor: Colors.black,
             body: Center(
+              
               child: CircularProgressIndicator(),
             ),
           );

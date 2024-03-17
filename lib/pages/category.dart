@@ -49,8 +49,10 @@ class _CategoryPageState extends State<CategoryPage> {
         title: '$industry\n$count', // Display industry and count as the title
         radius: 100,
         titleStyle: TextStyle(
-          fontSize: 16,
-          fontWeight: FontWeight.bold,
+          fontFamily: 'Poppins',
+
+          fontSize: 12,
+          fontWeight: FontWeight.w400,
           color: const Color(0xffffffff),
         ),
       ),
